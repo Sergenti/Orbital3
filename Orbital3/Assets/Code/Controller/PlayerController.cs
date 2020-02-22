@@ -1,7 +1,7 @@
-using System;
 using Code.Interaction;
 using Code.Movement;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace Code.Controller
 {
@@ -10,30 +10,38 @@ namespace Code.Controller
         [SerializeField] private InputRef inputRef;
         [SerializeField] private float dashForce = 1f;
         [SerializeField] private PlayerStats stats;
+        [SerializeField] private Tilemap _tilemap;
+        [SerializeField] private float slowFactor = 1;
 
         private PlayerMovement m_playerMovement;
         private float m_speed;
         private CircleCollider2D collider;
+        private Rigidbody2D rb;
         private float caloPerSec = 20f;
+        private Animator _animator;
+        private static readonly int WeightIdx = Animator.StringToHash("WeightIdx");
 
         private void Start()
         {
             m_playerMovement = GetComponent<PlayerMovement>();
             collider = GetComponent<CircleCollider2D>();
             m_speed = stats.WeightLevels.weightLevels[stats.weightLevelIdx].speed;
+            rb = GetComponent<Rigidbody2D>();
+            _animator = GetComponent<Animator>();
         }
 
         private void Update()
         {
+            
             if (stats.CheckCalories())
             {
                 RecalculateSize();
             }
-            else if(stats.calories <= 0)
+            else if(stats.calories <= 0 || stats.calories >= PlayerStats.MAX_CALORIES)
             {
                Die(); 
             }
-            m_playerMovement.Move(inputRef.GetVector(),m_speed);
+            m_playerMovement.Move(inputRef.GetVector(),m_speed*slowFactor);
 
             stats.calories -= caloPerSec * Time.deltaTime;
 
@@ -46,8 +54,10 @@ namespace Code.Controller
         private void RecalculateSize()
         {
             collider.radius = stats.WeightLevels.weightLevels[stats.weightLevelIdx].bodyRadius;
-            //Change Sprite
             m_speed = stats.WeightLevels.weightLevels[stats.weightLevelIdx].speed;
+            collider.sharedMaterial = stats.WeightLevels.weightLevels[stats.weightLevelIdx].physicMaterial;
+            rb.sharedMaterial = stats.WeightLevels.weightLevels[stats.weightLevelIdx].physicMaterial;
+            _animator.SetInteger(WeightIdx,stats.weightLevelIdx);
         }
 
         public void TakeCalories(float calories)
@@ -55,17 +65,15 @@ namespace Code.Controller
             stats.calories += calories;
         }
 
-        private void Die()
+        public void Die()
         {
             stats.isAlive = false;
             Destroy(gameObject);
         }
 
-        private void CheckCaloriesLevel()
+        public void Slow()
         {
-            if(stats.calories <= 0)
-                Die();
-           
+            slowFactor = 0.6f;
         }
 
         

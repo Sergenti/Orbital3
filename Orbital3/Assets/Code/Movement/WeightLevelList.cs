@@ -15,6 +15,7 @@ namespace Code.Movement
             public string name;
             public float speed;
             public float bodyRadius;
+            public PhysicsMaterial2D physicMaterial;
         }
     }
 
