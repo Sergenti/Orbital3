@@ -103,10 +103,10 @@ public class TerrainGenerator : MonoBehaviour
         {
             // decide if there is going to be an obstacle or not
             // we will only have one of each max per portion
-            bool hasHole = Random.Range(0, 101) >= holeChance * 100;
-            bool hasBush = Random.Range(0, 101) >= bushChance * 100;
+            bool hasHole = Random.Range(0, 101) <= holeChance * 100;
+            bool hasBush = Random.Range(0, 101) <= bushChance * 100;
 
-            Debug.Log("bush: " + hasBush + " hole: " + hasHole);
+            //Debug.Log("bush: " + hasBush + " hole: " + hasHole);
 
             // if they exist
             if (hasHole)
@@ -117,11 +117,11 @@ public class TerrainGenerator : MonoBehaviour
                 // decide where to place it
                 int maxY = startY + portionWidth - holeSize;
                 int maxX = startX + portionLength - holeSize;
-
                 bool abort = false;
                 int tries = 0;
                 Vector3Int pos = Vector3Int.zero;
 
+                // validate placement
                 while (true)
                 {
                     pos = new Vector3Int(
@@ -136,6 +136,7 @@ public class TerrainGenerator : MonoBehaviour
                     if (tries > maxPlacementTries)
                     {
                         abort = true;
+                        Debug.Log("Hole aborted.");
                         break;
                     }
                 }
@@ -172,9 +173,9 @@ public class TerrainGenerator : MonoBehaviour
                 while (true)
                 {
                     pos = new Vector3Int(
-                    Random.Range(startX, maxX),
-                    Random.Range(startY, maxY),
-                    0
+                        Random.Range(startX, maxX),
+                        Random.Range(startY, maxY),
+                        0
                     );
 
                     if (CanBuildBush(pos, bushSize)) break;
@@ -183,6 +184,7 @@ public class TerrainGenerator : MonoBehaviour
                     if (tries > maxPlacementTries)
                     {
                         abort = true;
+                        Debug.Log("Bush aborted.");
                         break;
                     }
                 }
@@ -221,15 +223,9 @@ public class TerrainGenerator : MonoBehaviour
                 int currentY = startY + y;
                 Vector3Int currentPos = new Vector3Int(currentX, currentY, 0);
 
-                if (terrainMap.HasTile(currentPos))
-                {
-                    terrainMap.SetTile(currentPos, null);
-                }
-                if (obstaclesMap.HasTile(currentPos))
-                {
-                    obstaclesMap.SetTile(currentPos, null);
-                }
-
+                // remove tile on both tilemaps
+                if (terrainMap.HasTile(currentPos)) terrainMap.SetTile(currentPos, null);
+                if (obstaclesMap.HasTile(currentPos)) obstaclesMap.SetTile(currentPos, null);
             }
         }
     }
@@ -237,9 +233,10 @@ public class TerrainGenerator : MonoBehaviour
     private bool CanBuildHole(Vector3Int pos, int size)
     {
         // returns false if there is something where this would be placed
-        for (int x = 0; x < size; x++)
+        // -1 and +1 to scan for one more block on each side
+        for (int x = -1; x < size + 1; x++)
         {
-            for (int y = 0; y < size; y++)
+            for (int y = -1; y < size + 1; y++)
             {
                 var newPos = new Vector3Int(
                     pos.x + x,
@@ -256,7 +253,8 @@ public class TerrainGenerator : MonoBehaviour
 
     private bool CanBuildBush(Vector3Int pos, int size)
     {
-        for (int y = 0; y < size; y++)
+        // -1 and +1 to scan for one more block on each side
+        for (int y = -1; y < size + 1; y++)
         {
             var newPos = new Vector3Int(
                 pos.x,

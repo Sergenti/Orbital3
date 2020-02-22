@@ -196,16 +196,16 @@ MonoBehaviour:
   portionWidth: 9
   laneWidth: 1
   detectionDistance: 5
-  bushChance: 0.932
+  bushChance: 0.337
   maxBushSize: 4
-  holeChance: 0.895
+  holeChance: 0.411
   maxHoleSize: 3
-  maxObstacles: 6
+  maxObstacles: 3
   maxPlacementTries: 5
   hole: {fileID: 11400000, guid: cd2df76585930f242ba729a7b58136e4, type: 2}
   bush: {fileID: 11400000, guid: fe9f4f3d95c6d6f4ba9e719579937ab7, type: 2}
-  regularGroundTile: {fileID: 11400000, guid: d81057022a1bd2f428c5352d1e20c676, type: 2}
-  laneTile: {fileID: 11400000, guid: fa2c6ae8863d0004dacb721fb990e5c1, type: 2}
+  regularGroundTile: {fileID: 11400000, guid: 4d97611558e7f3547abe90bc296d3de0, type: 2}
+  laneTile: {fileID: 11400000, guid: aa5a4f95be0635541877b93b9c33236b, type: 2}
   terrainMap: {fileID: 1295046740}
   obstaclesMap: {fileID: 1124097943}
   portionsCreated: 0
@@ -610,7 +610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031062021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
