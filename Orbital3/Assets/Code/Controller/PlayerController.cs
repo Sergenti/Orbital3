@@ -14,6 +14,7 @@ namespace Code.Controller
         private PlayerMovement m_playerMovement;
         private float m_speed;
         private CircleCollider2D collider;
+        private float caloPerSec = 20f;
 
         private void Start()
         {
@@ -28,7 +29,13 @@ namespace Code.Controller
             {
                 RecalculateSize();
             }
+            else if(stats.calories <= 0)
+            {
+               Die(); 
+            }
             m_playerMovement.Move(inputRef.GetVector(),m_speed);
+
+            stats.calories -= caloPerSec * Time.deltaTime;
 
            if (Input.GetButtonDown(inputRef.DashButton))
            {
@@ -48,9 +55,10 @@ namespace Code.Controller
             stats.calories += calories;
         }
 
-        public void Die()
+        private void Die()
         {
             stats.isAlive = false;
+            Destroy(gameObject);
         }
 
         private void CheckCaloriesLevel()
@@ -60,15 +68,6 @@ namespace Code.Controller
            
         }
 
-        private void LoseWeight()
-        {
-            
-        }
-
-        private void GainWeight()
-        {
-            
-        }
         
         [System.Serializable]
         private struct InputRef
@@ -81,7 +80,7 @@ namespace Code.Controller
 
             public Vector2 GetVector()
             {
-                return new Vector2(UnityEngine.Input.GetAxis(xAxis),UnityEngine.Input.GetAxis(yAxis)); 
+                return new Vector2(UnityEngine.Input.GetAxisRaw(xAxis),UnityEngine.Input.GetAxisRaw(yAxis)); 
             }
         }
 

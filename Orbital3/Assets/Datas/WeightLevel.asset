@@ -15,7 +15,7 @@ MonoBehaviour:
   weightLevels:
   - caloriesThreshold: 0
     name: Fit
-    speed: 5
+    speed: 500
     bodyRadius: 2
   - caloriesThreshold: 300
     name: Medium
