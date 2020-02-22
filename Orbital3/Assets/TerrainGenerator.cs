@@ -17,6 +17,8 @@ public class TerrainGenerator : MonoBehaviour
     [SerializeField] private int maxBushSize = 3;
     [SerializeField] [Range(0, 1)] private float holeChance = .5f;
     [SerializeField] private int maxHoleSize = 3;
+    [SerializeField] private int maxObstacles = 3;
+    [SerializeField] private int maxPlacementTries = 5;
 
     [Space]
     [Header("Tiles")]
@@ -97,78 +99,113 @@ public class TerrainGenerator : MonoBehaviour
         }
 
         // generate obstacles
-
-        // decide if there is going to be an obstacle or not
-        // we will only have one of each max per portion
-        bool hasHole = Random.Range(0.00f, 1.00f) >= holeChance;
-        bool hasBush = Random.Range(0.00f, 1.00f) >= bushChance;
-        hasBush = true;
-        hasHole = true;
-
-        Debug.Log("bush: " + hasBush + " hole: " + hasHole);
-
-        // if they exist
-        if (hasHole)
+        for (int i = 0; i < maxObstacles; i++)
         {
-            // decide its size
-            int holeSize = Random.Range(2, maxHoleSize);
+            // decide if there is going to be an obstacle or not
+            // we will only have one of each max per portion
+            bool hasHole = Random.Range(0, 101) >= holeChance * 100;
+            bool hasBush = Random.Range(0, 101) >= bushChance * 100;
 
-            // decide where to place it
-            int maxY = startY + portionWidth - holeSize;
-            int maxX = startX + portionLength - holeSize;
+            Debug.Log("bush: " + hasBush + " hole: " + hasHole);
 
-            Vector3Int pos = new Vector3Int(
-                Random.Range(startX, maxX),
-                Random.Range(startY, maxY),
-                0
-            );
-
-            // place it as a square
-            for (int x = 0; x < holeSize; x++)
+            // if they exist
+            if (hasHole)
             {
-                for (int y = 0; y < holeSize; y++)
+                // decide its size
+                int holeSize = Random.Range(2, maxHoleSize + 1);
+
+                // decide where to place it
+                int maxY = startY + portionWidth - holeSize;
+                int maxX = startX + portionLength - holeSize;
+
+                bool abort = false;
+                int tries = 0;
+                Vector3Int pos = Vector3Int.zero;
+
+                while (true)
                 {
-                    var currentPos = new Vector3Int(
-                        pos.x + x,
-                        pos.y + y,
+                    pos = new Vector3Int(
+                        Random.Range(startX, maxX),
+                        Random.Range(startY, maxY),
                         0
                     );
 
-                    obstaclesMap.SetTile(currentPos, hole);
+                    if (CanBuildHole(pos, holeSize)) break;
+
+                    tries++;
+                    if (tries > maxPlacementTries)
+                    {
+                        abort = true;
+                        break;
+                    }
+                }
+
+                // place it as a square
+                for (int x = 0; x < holeSize; x++)
+                {
+                    for (int y = 0; y < holeSize; y++)
+                    {
+                        var currentPos = new Vector3Int(
+                            pos.x + x,
+                            pos.y + y,
+                            0
+                        );
+
+                        obstaclesMap.SetTile(currentPos, hole);
+                    }
                 }
             }
-        }
 
-        if (hasBush)
-        {
-            // decide its size
-            int bushSize = Random.Range(2, maxBushSize);
-
-            // decide where to place it
-            int maxY = startY + portionWidth - bushSize;
-            int maxX = startX + portionLength;
-
-            Vector3Int pos = new Vector3Int(
-                Random.Range(startX, maxX),
-                Random.Range(startY, maxY),
-                0
-            );
-
-            // place it, only in a row
-            for (int y = 0; y < bushSize; y++)
+            if (hasBush)
             {
-                var currentPos = new Vector3Int(
-                    pos.x,
-                    pos.y + y,
+                // decide its size
+                int bushSize = Random.Range(2, maxBushSize + 1);
+
+                // decide where to place it
+                int maxY = startY + portionWidth - bushSize;
+                int maxX = startX + portionLength;
+
+                bool abort = false;
+                int tries = 0;
+                Vector3Int pos = Vector3Int.zero;
+
+                while (true)
+                {
+                    pos = new Vector3Int(
+                    Random.Range(startX, maxX),
+                    Random.Range(startY, maxY),
                     0
-                );
+                    );
 
-                obstaclesMap.SetTile(currentPos, bush);
+                    if (CanBuildBush(pos, bushSize)) break;
+
+                    tries++;
+                    if (tries > maxPlacementTries)
+                    {
+                        abort = true;
+                        break;
+                    }
+                }
+
+                if (!abort)
+                {
+                    // place it, only in a row
+                    for (int y = 0; y < bushSize; y++)
+                    {
+                        var currentPos = new Vector3Int(
+                            pos.x,
+                            pos.y + y,
+                            0
+                        );
+
+                        obstaclesMap.SetTile(currentPos, bush);
+                    }
+                }
             }
-        }
 
-        portionsCreated++;
-        //Debug.Log("Road chunks created: " + portionsCreated);
+            portionsCreated++;
+            //Debug.Log("Road chunks created: " + portionsCreated);
+        }
     }
 
     private void RemovePortion(int startX)
@@ -195,5 +232,41 @@ public class TerrainGenerator : MonoBehaviour
 
             }
         }
+    }
+
+    private bool CanBuildHole(Vector3Int pos, int size)
+    {
+        // returns false if there is something where this would be placed
+        for (int x = 0; x < size; x++)
+        {
+            for (int y = 0; y < size; y++)
+            {
+                var newPos = new Vector3Int(
+                    pos.x + x,
+                    pos.y + y,
+                    0
+                );
+
+                if (obstaclesMap.HasTile(pos)) return false;
+            }
+        }
+
+        return true;
+    }
+
+    private bool CanBuildBush(Vector3Int pos, int size)
+    {
+        for (int y = 0; y < size; y++)
+        {
+            var newPos = new Vector3Int(
+                pos.x,
+                pos.y + y,
+                0
+            );
+
+            if (obstaclesMap.HasTile(pos)) return false;
+        }
+
+        return true;
     }
 }
