@@ -196,12 +196,14 @@ MonoBehaviour:
   portionWidth: 9
   laneWidth: 1
   detectionDistance: 5
-  bushChance: 0.337
+  bushChance: 1
   maxBushSize: 4
   holeChance: 0.411
   maxHoleSize: 3
   maxObstacles: 3
   maxPlacementTries: 5
+  freeRadius: 2
+  spawnInvulnerability: 1
   hole: {fileID: 11400000, guid: cd2df76585930f242ba729a7b58136e4, type: 2}
   bush: {fileID: 11400000, guid: fe9f4f3d95c6d6f4ba9e719579937ab7, type: 2}
   regularGroundTile: {fileID: 11400000, guid: 4d97611558e7f3547abe90bc296d3de0, type: 2}
