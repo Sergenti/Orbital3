@@ -18,7 +18,8 @@ namespace Code.Movement
 
         private void FixedUpdate()
         {
-           m_rb.MovePosition(m_rb.position + m_moveVector * (m_speed * Time.fixedDeltaTime)); 
+          // m_rb.MovePosition(m_rb.position + m_moveVector * (m_speed * Time.fixedDeltaTime)); 
+          m_rb.velocity = m_moveVector * (m_speed * Time.fixedDeltaTime);
         }
 
         /// <summary>
@@ -39,7 +40,8 @@ namespace Code.Movement
 
         public void Dash(float dashForce)
         {
-           m_rb.AddForce(m_moveVector * dashForce); 
+            //m_moveVector *= dashForce;
+            m_rb.AddForce(m_moveVector*dashForce,ForceMode2D.Force);
         }
             
     }

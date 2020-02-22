@@ -118,7 +118,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 773690b71f43d2ed0a599774154c2404, type: 2}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -150,5 +150,5 @@ MonoBehaviour:
     xAxis: Horizontal
     yAxis: Vertical
     dashButton: Jump
-  dashForce: 5000
+  dashForce: 3120
   stats: {fileID: 11400000, guid: fd6ba7ca3eda9dbde9d28a38bf37b382, type: 2}

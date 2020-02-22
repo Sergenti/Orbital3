@@ -11,6 +11,7 @@ namespace Code.Movement
         public int weightLevelIdx;
         public bool isAlive = true;
         public WeightLevelList WeightLevels;
+        
 
         public bool CheckCalories()
         {
