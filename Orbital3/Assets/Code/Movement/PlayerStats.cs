@@ -11,6 +11,7 @@ namespace Code.Movement
         public int weightLevelIdx;
         public bool isAlive = true;
         public WeightLevelList WeightLevels;
+        public static float MAX_CALORIES = 1000f;
         
 
         public bool CheckCalories()

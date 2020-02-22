@@ -8,7 +8,10 @@ namespace Code.Movement
     {
         private Rigidbody2D m_rb;
         private Vector2 m_moveVector;
+        private Vector2 m_dashVector;
+        private float m_dashTime;
         private float m_speed = 0f;
+        private float totalDashTime = .2f;
 
         private void Start()
         {
@@ -19,7 +22,15 @@ namespace Code.Movement
         private void FixedUpdate()
         {
           // m_rb.MovePosition(m_rb.position + m_moveVector * (m_speed * Time.fixedDeltaTime)); 
-          m_rb.velocity = m_moveVector * (m_speed * Time.fixedDeltaTime);
+          m_rb.velocity = m_moveVector * (m_speed * Time.fixedDeltaTime) + m_dashVector * (m_speed * Time.fixedDeltaTime);
+          if (m_dashTime <= 0)
+          {
+              m_dashVector = Vector2.zero;
+          }
+          else
+          {
+                m_dashTime -= Time.deltaTime;
+          }
         }
 
         /// <summary>
@@ -40,8 +51,8 @@ namespace Code.Movement
 
         public void Dash(float dashForce)
         {
-            //m_moveVector *= dashForce;
-            m_rb.AddForce(m_moveVector*dashForce,ForceMode2D.Force);
+            m_dashVector = m_moveVector * dashForce;
+            m_dashTime = totalDashTime;
         }
             
     }

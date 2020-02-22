@@ -16,8 +16,10 @@ MonoBehaviour:
   - caloriesThreshold: 0
     name: Fit
     speed: 500
-    bodyRadius: 2
-  - caloriesThreshold: 300
+    bodyRadius: 0.15
+    physicMaterial: {fileID: 6200000, guid: 773690b71f43d2ed0a599774154c2404, type: 2}
+  - caloriesThreshold: 200
     name: Medium
-    speed: 0.2
-    bodyRadius: 5
+    speed: 200
+    bodyRadius: 0.3
+    physicMaterial: {fileID: 6200000, guid: 87052f5ffbed379e7b74cb263076096b, type: 2}
