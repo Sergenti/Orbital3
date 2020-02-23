@@ -18,18 +18,18 @@ namespace Code.Controller
         private float m_speed;
         private CircleCollider2D collider;
         private Rigidbody2D rb;
-        private float caloPerSec = 20f;
+        private float caloPerSec = 40f;
         private Animator _animator;
         private static readonly int WeightIdx = Animator.StringToHash("WeightIdx");
 
         private void Start()
         {
+            stats.Reset();
             m_playerMovement = GetComponent<PlayerMovement>();
             collider = GetComponent<CircleCollider2D>();
             m_speed = stats.WeightLevels.weightLevels[stats.weightLevelIdx].speed;
             rb = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
-            stats.Reset();
         }
 
         private void Update()
@@ -39,7 +39,7 @@ namespace Code.Controller
             {
                 RecalculateSize();
             }
-            else if(stats.calories <= 0 || stats.calories >= PlayerStats.MAX_CALORIES)
+            else if(stats.calories <= 0) //|| stats.calories >= PlayerStats.MAX_CALORIES)
             {
                Die(); 
             }
@@ -50,6 +50,7 @@ namespace Code.Controller
            if (Input.GetButtonDown(inputRef.DashButton) && stats.weightLevelIdx >= 2)
            {
                m_playerMovement.Dash(dashForce);
+               stats.calories -= 100f;
            }
         }
 
