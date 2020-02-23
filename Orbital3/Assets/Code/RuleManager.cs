@@ -10,15 +10,18 @@ namespace Code
     {
 
         [SerializeField] private List<PlayerStats> players;
+        [SerializeField] private GameOverPanel _gameOverPanel;
         
-        public void OneMoreDead()
+        private void Update()
         {
             if (CheckEndConditions())
             {
                 PlayerStats winner = GetFirstAlive();
-                string name = winner.name;
+                string name = winner.playerName;
                 Color color = winner.color;
-                //Call stuff from flo                
+                _gameOverPanel.gameObject.SetActive(true); 
+                _gameOverPanel.SetWinner(name,color);
+                Destroy(gameObject);
             }
         }
 

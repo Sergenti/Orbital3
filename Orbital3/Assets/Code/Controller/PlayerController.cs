@@ -12,7 +12,6 @@ namespace Code.Controller
         [SerializeField] private InputRef inputRef;
         [SerializeField] private float dashForce = 1f;
         [SerializeField] private PlayerStats stats;
-        [SerializeField] private Tilemap _tilemap;
         [SerializeField] private float slowFactor = 1;
 
         private PlayerMovement m_playerMovement;
@@ -30,6 +29,7 @@ namespace Code.Controller
             m_speed = stats.WeightLevels.weightLevels[stats.weightLevelIdx].speed;
             rb = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+            stats.Reset();
         }
 
         private void Update()
