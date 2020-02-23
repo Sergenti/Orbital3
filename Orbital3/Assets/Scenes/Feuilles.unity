@@ -716,51 +716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e43059cb26841ef814f6b3ce458a2ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
---- !u!1 &930798562
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 930798564}
-  - component: {fileID: 930798563}
-  m_Layer: 0
-  m_Name: LeavesController
-  m_TagString: LeavesController
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &930798563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930798562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fba51203762d194c88e8608f0f0f3f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leavesEffect: {fileID: 885366253}
---- !u!4 &930798564
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930798562}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4431111, y: -0.26013464, z: -0.9418678}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &997503444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1591,6 +1546,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a30f0e42feb3832f8f9cc0c70e333b8, type: 3}
+--- !u!1001 &2117171064734643738
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2117171063980076536, guid: ef7c6e7cd94626097bfca08d8d2866d6,
+        type: 3}
+      propertyPath: m_Name
+      value: LeavesController
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117171063980076537, guid: ef7c6e7cd94626097bfca08d8d2866d6,
+        type: 3}
+      propertyPath: leavesEffect
+      value: 
+      objectReference: {fileID: 885366253}
+    - target: {fileID: 2117171063980076542, guid: ef7c6e7cd94626097bfca08d8d2866d6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.4431111
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117171063980076542, guid: ef7c6e7cd94626097bfca08d8d2866d6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.26013464
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117171063980076542, guid: ef7c6e7cd94626097bfca08d8d2866d6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.9418678
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117171063980076542, guid: ef7c6e7cd94626097bfca08d8d2866d6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117171063980076542, guid: ef7c6e7cd94626097bfca08d8d2866d6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117171063980076542, guid: ef7c6e7cd94626097bfca08d8d2866d6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117171063980076542, guid: ef7c6e7cd94626097bfca08d8d2866d6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117171063980076542, guid: ef7c6e7cd94626097bfca08d8d2866d6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117171063980076542, guid: ef7c6e7cd94626097bfca08d8d2866d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117171063980076542, guid: ef7c6e7cd94626097bfca08d8d2866d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117171063980076542, guid: ef7c6e7cd94626097bfca08d8d2866d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef7c6e7cd94626097bfca08d8d2866d6, type: 3}
 --- !u!1001 &4002063586201795880
 PrefabInstance:
   m_ObjectHideFlags: 0

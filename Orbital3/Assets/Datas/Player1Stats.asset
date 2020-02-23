@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df6f09c01e64ae2b37c881275f9fd0d, type: 3}
   m_Name: Player1Stats
   m_EditorClassIdentifier: 
-  calories: 448.90768
+  calories: 314.87183
   weightLevelIdx: 1
   isAlive: 0
   WeightLevels: {fileID: 11400000, guid: 6443a01f5768e8320956680fb0b02556, type: 2}
