@@ -2231,5 +2231,15 @@ PrefabInstance:
       propertyPath: dashForce
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4158437580332398893, guid: 1a30f0e42feb3832f8f9cc0c70e333b8,
+        type: 3}
+      propertyPath: inputRef.xAxis
+      value: Horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158437580332398893, guid: 1a30f0e42feb3832f8f9cc0c70e333b8,
+        type: 3}
+      propertyPath: inputRef.yAxis
+      value: Vertical
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a30f0e42feb3832f8f9cc0c70e333b8, type: 3}
