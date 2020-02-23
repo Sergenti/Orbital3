@@ -102,9 +102,9 @@ public class TerrainGenerator : MonoBehaviour
             }
         }
 
+        // generate obstacles
         if (portionsCreated > spawnInvulnerability)
         {
-            // generate obstacles
             for (int i = 0; i < maxObstacles; i++)
             {
                 // decide if there is going to be an obstacle or not
@@ -137,18 +137,13 @@ public class TerrainGenerator : MonoBehaviour
                             0
                         );
 
-                        if (CanBuildHole(pos, holeSize))
-                        {
-                            Debug.Log("Hole: " + pos.x + " " + pos.y);
-                            break;
-                        }
+                        if (CanBuildHole(pos, holeSize)) break;
 
                         // limit iterations
                         tries++;
                         if (tries > maxPlacementTries)
                         {
                             abort = true;
-                            Debug.Log("Hole aborted.");
                             break;
                         }
                     }
@@ -190,18 +185,13 @@ public class TerrainGenerator : MonoBehaviour
                             0
                         );
 
-                        if (CanBuildBush(pos, bushSize))
-                        {
-                            Debug.Log("bush: " + pos.x + ", " + pos.y);
-                            break;
-                        }
+                        if (CanBuildBush(pos, bushSize)) break;
 
                         // limit iterations
                         tries++;
                         if (tries > maxPlacementTries)
                         {
                             abort = true;
-                            Debug.Log("Bush aborted.");
                             break;
                         }
                     }
@@ -225,7 +215,6 @@ public class TerrainGenerator : MonoBehaviour
         }
 
         portionsCreated++;
-        //Debug.Log("Road chunks created: " + portionsCreated);
     }
 
     private void RemovePortion(int startX)
