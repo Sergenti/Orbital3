@@ -13,6 +13,7 @@ namespace Code.Movement
         public WeightLevelList WeightLevels;
         public static float MAX_CALORIES = 1000f;
         public Color color;
+        public string playerName;
         
 
         public bool CheckCalories()
@@ -35,7 +36,7 @@ namespace Code.Movement
 
         public void OnEnable()
         {
-            calories = 100;
+            calories = 200f;
             weightLevelIdx = 0;
             isAlive = true;
         }

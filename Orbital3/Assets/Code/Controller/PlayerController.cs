@@ -47,7 +47,7 @@ namespace Code.Controller
 
             stats.calories -= caloPerSec * Time.deltaTime;
 
-           if (Input.GetButtonDown(inputRef.DashButton) && stats.weightLevelIdx >= 1)
+           if (Input.GetButtonDown(inputRef.DashButton) && stats.weightLevelIdx >= 2)
            {
                m_playerMovement.Dash(dashForce);
            }
