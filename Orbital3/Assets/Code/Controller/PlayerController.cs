@@ -39,7 +39,7 @@ namespace Code.Controller
             {
                 RecalculateSize();
             }
-            else if(stats.calories <= 0) //|| stats.calories >= PlayerStats.MAX_CALORIES)
+            else if(stats.calories <= 0 || stats.isAlive == false) //|| stats.calories >= PlayerStats.MAX_CALORIES)
             {
                Die(); 
             }
