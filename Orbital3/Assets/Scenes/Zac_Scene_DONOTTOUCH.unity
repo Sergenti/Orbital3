@@ -229,6 +229,11 @@ PrefabInstance:
       propertyPath: inputRef.dashButton
       value: Dash2
       objectReference: {fileID: 0}
+    - target: {fileID: 4158437580332398893, guid: 1a30f0e42feb3832f8f9cc0c70e333b8,
+        type: 3}
+      propertyPath: footsteps
+      value: 
+      objectReference: {fileID: 1682921256}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a30f0e42feb3832f8f9cc0c70e333b8, type: 3}
 --- !u!224 &138208474 stripped
@@ -352,6 +357,11 @@ PrefabInstance:
       propertyPath: inputRef.dashButton
       value: Dash4
       objectReference: {fileID: 0}
+    - target: {fileID: 4158437580332398893, guid: 1a30f0e42feb3832f8f9cc0c70e333b8,
+        type: 3}
+      propertyPath: footsteps
+      value: 
+      objectReference: {fileID: 1682921256}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a30f0e42feb3832f8f9cc0c70e333b8, type: 3}
 --- !u!1 &165811109
@@ -1515,6 +1525,154 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df974340740b4b50cbba10fa48959036, type: 3}
+--- !u!1 &1682921255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1682921257}
+  - component: {fileID: 1682921256}
+  - component: {fileID: 1682921258}
+  m_Layer: 0
+  m_Name: Footsteps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1682921256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682921255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c917c0daaa84cf46a37876b43d004c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ftsp1: {fileID: 8300000, guid: 17c6b91501a19154ca2e6002c37101e7, type: 3}
+  ftsp2: {fileID: 8300000, guid: 8e0939c6f2a91b8448a2b30700d59d80, type: 3}
+  ftsp3: {fileID: 8300000, guid: 4c1d57a5d6ea99d439ad00e4e9930fe1, type: 3}
+  ftsp4: {fileID: 8300000, guid: b6eaf0758e76dd94d8b404bc0986dc1a, type: 3}
+  ftsp5: {fileID: 8300000, guid: 6be548b23c1350e41b88a2a0ed176439, type: 3}
+  ftsp6: {fileID: 8300000, guid: 5fa33827fa1b13d49bd164499b349b52, type: 3}
+  ftsp7: {fileID: 8300000, guid: 448ea9160954fad4d80c366fb369b2f8, type: 3}
+  ftsp8: {fileID: 8300000, guid: 0eb6bf264d1d9414e8c60c9a70c039e3, type: 3}
+--- !u!4 &1682921257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682921255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1682921258
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682921255}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 17c6b91501a19154ca2e6002c37101e7, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.63
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!224 &1790955110 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4002063586900324479, guid: df974340740b4b50cbba10fa48959036,
@@ -1847,6 +2005,11 @@ PrefabInstance:
       propertyPath: inputRef.dashButton
       value: Dash3
       objectReference: {fileID: 0}
+    - target: {fileID: 4158437580332398893, guid: 1a30f0e42feb3832f8f9cc0c70e333b8,
+        type: 3}
+      propertyPath: footsteps
+      value: 
+      objectReference: {fileID: 1682921256}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a30f0e42feb3832f8f9cc0c70e333b8, type: 3}
 --- !u!1001 &4002063586201795880
@@ -2076,5 +2239,10 @@ PrefabInstance:
       propertyPath: dashForce
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4158437580332398893, guid: 1a30f0e42feb3832f8f9cc0c70e333b8,
+        type: 3}
+      propertyPath: footsteps
+      value: 
+      objectReference: {fileID: 1682921256}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a30f0e42feb3832f8f9cc0c70e333b8, type: 3}

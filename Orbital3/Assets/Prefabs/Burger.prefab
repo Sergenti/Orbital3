@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5968050603fc436a8cfd9599dd6b2a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 8bdc41bcf1d18a6468a95004b24a2c85, type: 3}
   calories: 100
 --- !u!114 &1492181200
 MonoBehaviour:
@@ -125,4 +126,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e43059cb26841ef814f6b3ce458a2ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5

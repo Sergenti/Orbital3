@@ -9,6 +9,7 @@ namespace Code.Controller
 {
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] private Footsteps footsteps;
         [SerializeField] private InputRef inputRef;
         [SerializeField] private float dashForce = 1f;
         [SerializeField] private PlayerStats stats;
@@ -44,6 +45,7 @@ namespace Code.Controller
                Die(); 
             }
             m_playerMovement.Move(inputRef.GetVector(),m_speed*slowFactor);
+            footsteps.PlayFootsteps(inputRef.GetVector(), stats);
 
             stats.calories -= caloPerSec * Time.deltaTime;
 
