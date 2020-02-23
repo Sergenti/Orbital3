@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a397208ad0c4814b97435d82acc9e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  footsteps: {fileID: 0}
   inputRef:
     xAxis: Horizontal3
     yAxis: Vertical3
@@ -159,6 +160,10 @@ MonoBehaviour:
   dashForce: 2
   stats: {fileID: 11400000, guid: fd6ba7ca3eda9dbde9d28a38bf37b382, type: 2}
   slowFactor: 1
+  deathEvent: {fileID: 0}
+  deathsound: {fileID: 8300000, guid: 951399877cdc0144ab7490679a393b44, type: 3}
+  slapsound: {fileID: 8300000, guid: 1ed454c442f32c34e8c9fe8ad2db334c, type: 3}
+  superfat: {fileID: 8300000, guid: 1bbc82b331d71934cb08809dbc3cded5, type: 3}
 --- !u!95 &255957938
 Animator:
   serializedVersion: 3

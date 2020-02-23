@@ -17,6 +17,9 @@ namespace Code.Controller
         [SerializeField] private PlayerStats stats;
         [SerializeField] private float slowFactor = 1;
         [SerializeField] private VoidEvent deathEvent;
+        [SerializeField] private AudioClip deathsound;
+        [SerializeField] private AudioClip slapsound;
+        [SerializeField] private AudioClip superfat;
 
         private PlayerMovement m_playerMovement;
         private float m_speed;
@@ -62,6 +65,7 @@ namespace Code.Controller
         public void Dash(Vector2 moveVector)
         {
             m_playerMovement.ForceDash(dashForce*moveVector);
+            AudioSource.PlayClipAtPoint(slapsound, transform.position);
             stats.cameraShakeEvent.Raise(new Void());
         }
 
@@ -71,6 +75,7 @@ namespace Code.Controller
             m_speed = stats.WeightLevels.weightLevels[stats.weightLevelIdx].speed;
             collider.sharedMaterial = stats.WeightLevels.weightLevels[stats.weightLevelIdx].physicMaterial;
             rb.sharedMaterial = stats.WeightLevels.weightLevels[stats.weightLevelIdx].physicMaterial;
+            if (stats.weightLevelIdx == 3) {AudioSource.PlayClipAtPoint(superfat, transform.position);}
             _animator.SetInteger(WeightIdx,stats.weightLevelIdx);
         }
 
@@ -83,6 +88,7 @@ namespace Code.Controller
         {
             stats.isAlive = false;
             Instantiate(stats.deathEffect,transform.position,Quaternion.identity);
+            AudioSource.PlayClipAtPoint(deathsound, transform.position);
             deathEvent.Raise(new Void());
             Destroy(gameObject);
         }

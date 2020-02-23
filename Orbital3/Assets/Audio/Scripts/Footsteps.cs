@@ -21,15 +21,15 @@ public class Footsteps : MonoBehaviour
         AudioSource audio = GetComponent<AudioSource>();
         switch(stats.weightLevelIdx){
             case 0: if (isNull){if (!audio.isPlaying){audio.Play();}}
-                    else {audio.Stop(); audio.clip = ftsp2; if(!audio.isPlaying){audio.Play();}}
+                    else {audio.clip = ftsp2; if(!audio.isPlaying){audio.Play();}}
                     break;
-            case 1: if (isNull){audio.clip = ftsp3;if(!audio.isPlaying){audio.Play();}}
+            case 1: if (isNull){audio.clip = ftsp3; if(!audio.isPlaying){audio.Play();}}
                     else {audio.clip = ftsp4; if(!audio.isPlaying){audio.Play();}}
                     break;
             case 2: if (isNull){audio.clip = ftsp5; if(!audio.isPlaying){audio.Play();}}
                     else {audio.clip = ftsp6; if(!audio.isPlaying){audio.Play();}}
                     break;
-            case 3: if(isNull){audio.clip = ftsp7;if(!audio.isPlaying){audio.Play();}}
+            case 3: if (isNull){audio.clip = ftsp7; if(!audio.isPlaying){audio.Play();}}
                     else {audio.clip = ftsp8; if(!audio.isPlaying){audio.Play();}}
                     break;
         }
