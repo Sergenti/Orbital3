@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Code.EventSystem.Events;
 
 namespace Code.Movement
 {
@@ -14,6 +15,8 @@ namespace Code.Movement
         public static float MAX_CALORIES = 1000f;
         public Color color;
         public string playerName;
+        public VoidEvent cameraShakeEvent;
+        public GameObject deathEffect;
         
 
         public bool CheckCalories()

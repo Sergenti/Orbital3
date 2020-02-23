@@ -4,6 +4,7 @@ using Code.Movement;
 using Code.TrapAndBurger;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Void = Code.EventSystem.Void;
 
 namespace Code.Controller
 {
@@ -59,6 +60,7 @@ namespace Code.Controller
         public void Dash(Vector2 moveVector)
         {
             m_playerMovement.ForceDash(dashForce*moveVector);
+            stats.cameraShakeEvent.Raise(new Void());
         }
 
         private void RecalculateSize()
@@ -78,6 +80,7 @@ namespace Code.Controller
         public void Die()
         {
             stats.isAlive = false;
+            Instantiate(stats.deathEffect,transform.position,Quaternion.identity);
             Destroy(gameObject);
         }
 
