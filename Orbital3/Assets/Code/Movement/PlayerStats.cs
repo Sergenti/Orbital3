@@ -12,6 +12,7 @@ namespace Code.Movement
         public bool isAlive = true;
         public WeightLevelList WeightLevels;
         public static float MAX_CALORIES = 1000f;
+        public Color color;
         
 
         public bool CheckCalories()
@@ -34,12 +35,10 @@ namespace Code.Movement
 
         public void OnEnable()
         {
-            Debug.Log(("Recalculate"));
             calories = 100;
             weightLevelIdx = 0;
             isAlive = true;
         }
-
         
     }
 }

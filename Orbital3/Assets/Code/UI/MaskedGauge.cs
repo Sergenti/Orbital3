@@ -7,7 +7,6 @@ namespace Code.UI
 {
     public class MaskedGauge : MonoBehaviour
     {
-        [SerializeField] private Image gaugeSprite;
         [SerializeField] private Transform startPosition;
         [SerializeField] private PlayerStats stats;
 
@@ -31,10 +30,12 @@ namespace Code.UI
         private void Update()
         {
             SetPercent(stats.calories/10f);
-            //rectTransform.SetPositionAndRotation(startPosition.position + Vector3.right * (distance * m_percentage)/100f,Quaternion.identity);
-            
-            
-            gaugeSprite.rectTransform.SetPositionAndRotation(new Vector3(-(distance*m_percentage)/100f,gaugeSprite.rectTransform.position.y,gaugeSprite.rectTransform.position.z),Quaternion.identity);
+            rectTransform.SetPositionAndRotation(startPosition.position + Vector3.right * (distance * m_percentage)/100f,Quaternion.identity);
+
+            if (!stats.isAlive)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

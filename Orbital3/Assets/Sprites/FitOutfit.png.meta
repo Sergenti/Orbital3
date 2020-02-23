@@ -20,6 +20,27 @@ TextureImporter:
   - first:
       213: 5124045595653396376
     second: FitOutfit_5
+  - first:
+      213: 417725593006728216
+    second: FitOutfit_0
+  - first:
+      213: -9096161779276964924
+    second: FitOutfit_1
+  - first:
+      213: -1424347991982740941
+    second: FitOutfit_2
+  - first:
+      213: -8833788446523228546
+    second: FitOutfit_3
+  - first:
+      213: -6121333358696022335
+    second: FitOutfit_4
+  - first:
+      213: -3995969974497907464
+    second: FitOutfit_5
+  - first:
+      213: 7256221204515876047
+    second: FitOutfit_6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -118,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ba6ac3bfdd761380800000000000000
-      internalID: -9000868405505791311
+      spriteID: 81461c0b63f0cc500800000000000000
+      internalID: 417725593006728216
       vertices: []
       indices: 
       edges: []
@@ -139,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9271a4ca4fcd10b80800000000000000
-      internalID: -8430214084040190167
+      spriteID: 4cb16b62e01f3c180800000000000000
+      internalID: -9096161779276964924
       vertices: []
       indices: 
       edges: []
@@ -160,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a9e217719b910ff0800000000000000
-      internalID: -71605069990925913
+      spriteID: 33ae35d3c03bb3ce0800000000000000
+      internalID: -1424347991982740941
       vertices: []
       indices: 
       edges: []
@@ -181,8 +202,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1afc3a75e3e13d70800000000000000
-      internalID: 9021242103337646619
+      spriteID: e7e78081634186580800000000000000
+      internalID: -8833788446523228546
       vertices: []
       indices: 
       edges: []
@@ -202,8 +223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 766908a91e4355eb0800000000000000
-      internalID: -4731817689918433689
+      spriteID: 1cebc231eb7ac0ba0800000000000000
+      internalID: -6121333358696022335
       vertices: []
       indices: 
       edges: []
@@ -223,8 +244,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89753d522544c1740800000000000000
-      internalID: 5124045595653396376
+      spriteID: 8fcece0da767b88c0800000000000000
+      internalID: -3995969974497907464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FitOutfit_6
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 5
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc63da8db643b460800000000000000
+      internalID: 7256221204515876047
       vertices: []
       indices: 
       edges: []

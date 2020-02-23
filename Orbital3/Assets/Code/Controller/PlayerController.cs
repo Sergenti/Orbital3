@@ -1,5 +1,7 @@
+using System;
 using Code.Interaction;
 using Code.Movement;
+using Code.TrapAndBurger;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -45,7 +47,7 @@ namespace Code.Controller
 
             stats.calories -= caloPerSec * Time.deltaTime;
 
-           if (Input.GetButtonDown(inputRef.DashButton))
+           if (Input.GetButtonDown(inputRef.DashButton) && stats.weightLevelIdx >= 1)
            {
                m_playerMovement.Dash(dashForce);
            }
@@ -73,7 +75,7 @@ namespace Code.Controller
 
         public void Slow()
         {
-            slowFactor = 0.6f;
+            slowFactor = 0.4f;
         }
 
         
@@ -97,6 +99,23 @@ namespace Code.Controller
             IInteractable interactable = other.gameObject.GetComponent<IInteractable>();
             
             interactable?.Interact(this);
+
+            HaieBehaviour haieBehaviour = other.gameObject.GetComponent<HaieBehaviour>();
+
+            if (haieBehaviour == null)
+            {
+                slowFactor = 1f;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            HaieBehaviour haieBehaviour = other.gameObject.GetComponent<HaieBehaviour>();
+            
+            if (haieBehaviour != null)
+            {
+                slowFactor = 1f;
+            }
         }
     }
 }
