@@ -20,16 +20,16 @@ MonoBehaviour:
     physicMaterial: {fileID: 6200000, guid: 773690b71f43d2ed0a599774154c2404, type: 2}
   - caloriesThreshold: 200
     name: Chubby
-    speed: 400
+    speed: 370
     bodyRadius: 0.2
     physicMaterial: {fileID: 6200000, guid: 87052f5ffbed379e7b74cb263076096b, type: 2}
-  - caloriesThreshold: 500
+  - caloriesThreshold: 600
     name: Fat
-    speed: 300
+    speed: 250
     bodyRadius: 0.3
-    physicMaterial: {fileID: 6200000, guid: 87052f5ffbed379e7b74cb263076096b, type: 2}
+    physicMaterial: {fileID: 6200000, guid: b5f44751281a3c3feb1d4df55c99cc0e, type: 2}
   - caloriesThreshold: 800
     name: Fattest
-    speed: 200
+    speed: 130
     bodyRadius: 0.3
-    physicMaterial: {fileID: 6200000, guid: 87052f5ffbed379e7b74cb263076096b, type: 2}
+    physicMaterial: {fileID: 6200000, guid: b5f44751281a3c3feb1d4df55c99cc0e, type: 2}

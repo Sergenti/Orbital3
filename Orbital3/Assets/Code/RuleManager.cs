@@ -19,8 +19,8 @@ namespace Code
                 PlayerStats winner = GetFirstAlive();
                 string name = winner.playerName;
                 Color color = winner.color;
-                _gameOverPanel.gameObject.SetActive(true); 
-                _gameOverPanel.SetWinner(name,color);
+                _gameOverPanel.Enable(true); 
+                _gameOverPanel.SetWinner(name, color);
                 Destroy(gameObject);
             }
         }
