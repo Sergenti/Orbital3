@@ -5,6 +5,7 @@ using Code.TrapAndBurger;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Void = Code.EventSystem.Void;
+using Code.EventSystem.Events;
 
 namespace Code.Controller
 {
@@ -15,6 +16,7 @@ namespace Code.Controller
         [SerializeField] private float dashForce = 1f;
         [SerializeField] private PlayerStats stats;
         [SerializeField] private float slowFactor = 1;
+        [SerializeField] private VoidEvent deathEvent;
 
         private PlayerMovement m_playerMovement;
         private float m_speed;
@@ -81,6 +83,7 @@ namespace Code.Controller
         {
             stats.isAlive = false;
             Instantiate(stats.deathEffect,transform.position,Quaternion.identity);
+            deathEvent.Raise(new Void());
             Destroy(gameObject);
         }
 

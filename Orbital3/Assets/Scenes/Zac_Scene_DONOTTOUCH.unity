@@ -238,6 +238,12 @@ PrefabInstance:
       propertyPath: footsteps
       value: 
       objectReference: {fileID: 1682921256}
+    - target: {fileID: 4158437580332398893, guid: 1a30f0e42feb3832f8f9cc0c70e333b8,
+        type: 3}
+      propertyPath: deathEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b409d8c369eae04bb6eb86e76f7ff9b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a30f0e42feb3832f8f9cc0c70e333b8, type: 3}
 --- !u!224 &138208474 stripped
@@ -370,6 +376,12 @@ PrefabInstance:
       propertyPath: footsteps
       value: 
       objectReference: {fileID: 1682921256}
+    - target: {fileID: 4158437580332398893, guid: 1a30f0e42feb3832f8f9cc0c70e333b8,
+        type: 3}
+      propertyPath: deathEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b409d8c369eae04bb6eb86e76f7ff9b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a30f0e42feb3832f8f9cc0c70e333b8, type: 3}
 --- !u!1 &165811109
@@ -530,6 +542,7 @@ GameObject:
   - component: {fileID: 594114263}
   - component: {fileID: 594114262}
   - component: {fileID: 594114261}
+  - component: {fileID: 594114265}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -627,6 +640,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &594114265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594114260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25528de8d354ebdbdea46cfadb15c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventToListenTo: {fileID: 11400000, guid: 4b409d8c369eae04bb6eb86e76f7ff9b, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 594114261}
+        m_MethodName: SuddenShake
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 3
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &608469436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1775,6 +1815,12 @@ PrefabInstance:
       propertyPath: footsteps
       value: 
       objectReference: {fileID: 1682921256}
+    - target: {fileID: 4158437580332398893, guid: 1a30f0e42feb3832f8f9cc0c70e333b8,
+        type: 3}
+      propertyPath: deathEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b409d8c369eae04bb6eb86e76f7ff9b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a30f0e42feb3832f8f9cc0c70e333b8, type: 3}
 --- !u!1001 &4158437579526102486
@@ -1894,5 +1940,11 @@ PrefabInstance:
       propertyPath: inputRef.xAxis
       value: Horizontal
       objectReference: {fileID: 0}
+    - target: {fileID: 4158437580332398893, guid: 1a30f0e42feb3832f8f9cc0c70e333b8,
+        type: 3}
+      propertyPath: deathEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b409d8c369eae04bb6eb86e76f7ff9b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a30f0e42feb3832f8f9cc0c70e333b8, type: 3}
