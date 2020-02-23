@@ -9,6 +9,7 @@ namespace Code.TrapAndBurger
     {
         [SerializeField] private float calories;
 
+
         private void Start()
         {
            Destroy(gameObject,10f); 
