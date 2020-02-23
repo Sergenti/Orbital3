@@ -7,11 +7,13 @@ namespace Code.Movement
     public class PlayerMovement : MonoBehaviour
     {
         private Rigidbody2D m_rb;
-        private Vector2 m_moveVector;
+        public Vector2 m_moveVector;
         private Vector2 m_dashVector;
         private float m_dashTime;
         private float m_speed = 0f;
         private float totalDashTime = .2f;
+
+        public bool isDashing;
 
         private void Start()
         {
@@ -26,6 +28,7 @@ namespace Code.Movement
           if (m_dashTime <= 0)
           {
               m_dashVector = Vector2.zero;
+              isDashing = false;
           }
           else
           {
@@ -53,6 +56,14 @@ namespace Code.Movement
         {
             m_dashVector = m_moveVector * dashForce;
             m_dashTime = totalDashTime;
+            isDashing = true;
+        }
+
+        public void ForceDash(Vector2 dashDirection)
+        {
+            m_dashVector = dashDirection;
+            m_dashTime = totalDashTime;
+            isDashing = true;
         }
             
     }

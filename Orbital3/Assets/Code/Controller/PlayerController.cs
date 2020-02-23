@@ -53,6 +53,11 @@ namespace Code.Controller
            }
         }
 
+        public void Dash(Vector2 moveVector)
+        {
+            m_playerMovement.ForceDash(dashForce*moveVector);
+        }
+
         private void RecalculateSize()
         {
             collider.radius = stats.WeightLevels.weightLevels[stats.weightLevelIdx].bodyRadius;
@@ -100,12 +105,18 @@ namespace Code.Controller
             
             interactable?.Interact(this);
 
-            HaieBehaviour haieBehaviour = other.gameObject.GetComponent<HaieBehaviour>();
+            
+        }
 
-            if (haieBehaviour == null)
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
+            
+            if (playerController != null && m_playerMovement.isDashing)
             {
-                slowFactor = 1f;
+                 playerController.Dash(m_playerMovement.m_moveVector);
             }
+            
         }
 
         private void OnTriggerExit2D(Collider2D other)
