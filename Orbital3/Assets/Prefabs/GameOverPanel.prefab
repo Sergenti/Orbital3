@@ -1029,6 +1029,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4236904905481500213, guid: 10c1e62581ad38b4694da230ca7f8559,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 4236904905481500219, guid: 10c1e62581ad38b4694da230ca7f8559,
         type: 3}
       propertyPath: m_Name
