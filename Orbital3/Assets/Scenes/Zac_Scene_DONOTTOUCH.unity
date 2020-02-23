@@ -234,9 +234,6 @@ PrefabInstance:
       propertyPath: footsteps
       value: 
       objectReference: {fileID: 1682921256}
-      propertyPath: dashForce
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a30f0e42feb3832f8f9cc0c70e333b8, type: 3}
 --- !u!224 &138208474 stripped
@@ -365,9 +362,6 @@ PrefabInstance:
       propertyPath: footsteps
       value: 
       objectReference: {fileID: 1682921256}
-      propertyPath: dashForce
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a30f0e42feb3832f8f9cc0c70e333b8, type: 3}
 --- !u!1 &165811109
@@ -2156,9 +2150,6 @@ PrefabInstance:
       propertyPath: footsteps
       value: 
       objectReference: {fileID: 1682921256}
-      propertyPath: dashForce
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a30f0e42feb3832f8f9cc0c70e333b8, type: 3}
 --- !u!1001 &4002063586201795880
@@ -2302,6 +2293,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 999600117, guid: 1a30f0e42feb3832f8f9cc0c70e333b8, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: fd6ba7ca3eda9dbde9d28a38bf37b382,
+        type: 2}
     - target: {fileID: 4158437580332398881, guid: 1a30f0e42feb3832f8f9cc0c70e333b8,
         type: 3}
       propertyPath: m_Name
@@ -2393,13 +2389,15 @@ PrefabInstance:
       propertyPath: footsteps
       value: 
       objectReference: {fileID: 1682921256}
-      propertyPath: inputRef.xAxis
-      value: Horizontal
-      objectReference: {fileID: 0}
     - target: {fileID: 4158437580332398893, guid: 1a30f0e42feb3832f8f9cc0c70e333b8,
         type: 3}
       propertyPath: inputRef.yAxis
       value: Vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158437580332398893, guid: 1a30f0e42feb3832f8f9cc0c70e333b8,
+        type: 3}
+      propertyPath: inputRef.xAxis
+      value: Horizontal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a30f0e42feb3832f8f9cc0c70e333b8, type: 3}
