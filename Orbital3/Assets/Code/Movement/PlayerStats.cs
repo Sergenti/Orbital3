@@ -40,6 +40,12 @@ namespace Code.Movement
             weightLevelIdx = 0;
             isAlive = true;
         }
-        
+
+        public void Reset()
+        {
+            calories = 200f;
+            weightLevelIdx = 0;
+            isAlive = true;
+        }
     }
 }
