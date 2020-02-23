@@ -18,12 +18,10 @@ public class GameOverPanel : MonoBehaviour
     {
         gameObject.SetActive(value);
 
-        // continue only if we are opening the panel
-        if(!value) return; 
-
-        // select the first button, for gamepad navigation of the UI
-        if (!EventSystem.current.alreadySelecting)
+        if (value)
         {
+            Debug.Log("Set first button.");
+            // select first button for keyboard and gamepad navigation
             EventSystem.current.SetSelectedGameObject(firstSelectedButton);
         }
     }
