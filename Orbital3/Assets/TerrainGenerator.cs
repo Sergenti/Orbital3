@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class TerrainGenerator : MonoBehaviour
 {
     [Header("Terrain Generation Parameters")]
-    [SerializeField] private int portionWidth = 5;
+    [SerializeField] private int portionWidth = 5; // width of the track in tiles
     private int portionLength = 0; // generated in fx of screen width
     [SerializeField] private int laneWidth = 1; // number of regular ground tiles between 2 lane markers
     [SerializeField] private int detectionDistance = 5;
@@ -39,8 +39,7 @@ public class TerrainGenerator : MonoBehaviour
     private int lastStartX = 0;
     private float screenWidthInUnits = 0;
     private Camera camera;
-
-    public int portionsCreated = 0;
+    [HideInInspector] public int portionsCreated = 0;
 
     // Start is called before the first frame update
     void Start()

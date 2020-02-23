@@ -8,7 +8,8 @@ namespace Code.TrapAndBurger
     {
         public void Interact(PlayerController player)
         {
-           player.Slow(); 
+            GameObject.FindWithTag("LeavesController").GetComponent<LeavesController>().InstantiateEffect(transform.position);
+            player.Slow();
         }
     }
 }
