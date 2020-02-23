@@ -19,7 +19,7 @@ namespace Code.Controller
         private float m_speed;
         private CircleCollider2D collider;
         private Rigidbody2D rb;
-        private float caloPerSec = 40f;
+        private float caloPerSec = 20;
         private Animator _animator;
         private static readonly int WeightIdx = Animator.StringToHash("WeightIdx");
 
@@ -40,7 +40,7 @@ namespace Code.Controller
             {
                 RecalculateSize();
             }
-            else if(stats.calories <= 0) //|| stats.calories >= PlayerStats.MAX_CALORIES)
+            else if(stats.calories <= 0 || stats.isAlive == false) //|| stats.calories >= PlayerStats.MAX_CALORIES)
             {
                Die(); 
             }
@@ -117,7 +117,7 @@ namespace Code.Controller
             
             if (playerController != null && m_playerMovement.isDashing)
             {
-                 playerController.Dash(m_playerMovement.m_moveVector);
+                 playerController.Dash(m_playerMovement.m_moveVector*stats.weightLevelIdx);
             }
             
         }

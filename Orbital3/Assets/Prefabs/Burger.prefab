@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 8bdc41bcf1d18a6468a95004b24a2c85, type: 3}
   calories: 100
+  clip: {fileID: 8300000, guid: f2c74b1f7c320634c985c2a1899f1697, type: 3}
 --- !u!114 &1492181200
 MonoBehaviour:
   m_ObjectHideFlags: 0

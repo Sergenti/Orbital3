@@ -21,6 +21,7 @@ namespace Code
                 Color color = winner.color;
                 _gameOverPanel.Enable(true); 
                 _gameOverPanel.SetWinner(name, color);
+                winner.isAlive = false;
                 Destroy(gameObject);
             }
         }

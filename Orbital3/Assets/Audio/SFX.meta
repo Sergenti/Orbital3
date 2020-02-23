@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Orbital3/Assets/Audio/SFX.meta
 guid: c1f2a05923da996428115d8a1852abf5
 folderAsset: yes
 DefaultImporter:
+=======
+guid: bb5ef03512f92f647913feb1befd34f5
+PrefabImporter:
+>>>>>>> 39235a31cdd9f3c1fcba74345de0b5e264cb0341:Orbital3/Assets/Prefabs/dust.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
