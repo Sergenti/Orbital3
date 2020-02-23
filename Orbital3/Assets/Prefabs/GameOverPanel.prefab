@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115682de4dcfe8342a4aad9fdd2e954f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: {fileID: 0}
+  playerName: {fileID: 9069751305435087015}
 --- !u!1 &9069751305332243251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,6 +1183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236904905481500213, guid: 10c1e62581ad38b4694da230ca7f8559,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadScene
       objectReference: {fileID: 0}
     - target: {fileID: 4236904905481500219, guid: 10c1e62581ad38b4694da230ca7f8559,
         type: 3}
