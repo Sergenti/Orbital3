@@ -12,6 +12,11 @@ public class RecurrentButtonEvents : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Zac_Scene_DONOTTOUCH");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
